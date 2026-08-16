@@ -1,0 +1,125 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f4f6f8;
+}
+
+button {
+  padding: 10px 18px;
+  border: none;
+  border-radius: 5px;
+  background: #2563eb;
+  color: white;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+input {
+  padding: 10px;
+  margin: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+
+/* Login */
+
+.login {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login .card {
+  width: 400px;
+}
+
+.login input {
+  width: 100%;
+  margin: 8px 0;
+}
+
+.login button {
+  width: 100%;
+  margin-top: 10px;
+}
+
+
+/* Header */
+
+header {
+  background: #1e293b;
+  color: white;
+  padding: 15px 30px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+/* Main */
+
+main {
+  max-width: 1200px;
+  margin: auto;
+  padding: 30px;
+}
+
+
+/* Cards */
+
+.card {
+  background: white;
+  padding: 25px;
+  margin-bottom: 25px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px #ddd;
+}
+
+
+/* Message */
+
+.message {
+  background: #e0f2fe;
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+}
+
+
+/* Section */
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+/* Table */
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+th,
+td {
+  padding: 12px;
+  border-bottom: 1px solid #ddd;
+  text-align: left;
+}
+
+th {
+  background: #f1f5f9;
+}
