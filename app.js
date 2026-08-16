@@ -3,6 +3,7 @@ const morgan = require("morgan");
 const { dbConnection, sequelize } = require("./config/db");
 require("./src/models");
 const { errorHandler } = require("./src/middleware/errorHandler");
+const authRoutes = require("./src/routes/auth")
 const { seedRoles } = require("./src/seeders/roleSeeder");
 
 
@@ -13,6 +14,8 @@ const app = express();
 
 app.use(express.json());
 app.use(morgan("combined"));
+
+app.use("/api/auth", authRoutes)
 
 let PORT = process.env.PORT || 3000
 
