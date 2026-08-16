@@ -5,8 +5,8 @@ const validationHander = async (req, res, next) => {
 
     if (!errors.isEmpty()) {
         return res.status(400).json({
+            message: errors.array(),
             success: false,
-            message: errors.array()
         })
     }
     next();
