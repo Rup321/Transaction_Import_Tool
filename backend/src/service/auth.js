@@ -61,9 +61,7 @@ const loginUser = async (userData) => {
     if (!token) {
         throw new Error("Failed to create token")
     }
-    return {
-        token
-    }
+    return token
 }
 
 module.exports = { registerUser, loginUser }

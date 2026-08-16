@@ -10,15 +10,17 @@ const batchRoutes = require("./src/routes/batch")
 const { seedRoles } = require("./src/seeders/roleSeeder");
 const { seedPermissions } = require("./src/seeders/permissionSeeder");
 const { seedRolePermissions } = require("./src/seeders/rolePermissionSeeder");
+const cors = require("cors")
 
 
 
 require("dotenv").config();
 const app = express();
 
-
+app.use(cors());
 app.use(express.json());
 app.use(morgan("dev"));
+
 
 app.use("/api", authRoutes)
 app.use("/api", fileUploadRoutes)
