@@ -8,16 +8,16 @@ const sequelize = new Sequelize(process.env.DB_NAME, process.env.DB_USERNAME, pr
     logging: false
 })
 
-// const loadModels = () => {
-//     require("../src/modules");
-// };
+const loadModels = () => {
+    require("../src/models");
+};
 
 const dbConnection = async () => {
     try {
         await sequelize.authenticate();
         console.log("Db Connected successfully");
 
-        // loadModels();
+        loadModels();
         await sequelize.sync({ alter: true });
         console.log("Db synced successfully");
     }
