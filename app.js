@@ -5,6 +5,8 @@ require("./src/models");
 const { errorHandler } = require("./src/middleware/errorHandler");
 const authRoutes = require("./src/routes/auth")
 const { seedRoles } = require("./src/seeders/roleSeeder");
+const { seedPermissions } = require("./src/seeders/permissionSeeder");
+const { seedRolePermissions } = require("./src/seeders/rolePermissionSeeder");
 
 
 
@@ -13,7 +15,7 @@ const app = express();
 
 
 app.use(express.json());
-app.use(morgan("combined"));
+app.use(morgan("dev"));
 
 app.use("/api/auth", authRoutes)
 
@@ -23,6 +25,8 @@ app.use(errorHandler);
 const serverConnect = async () => {
     await dbConnection();
     await seedRoles();
+    seedPermissions();
+    seedRolePermissions();
     await sequelize.sync({ alter: true });
     console.log("Db synced successfully");
 
