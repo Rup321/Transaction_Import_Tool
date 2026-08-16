@@ -37,7 +37,15 @@ const seedPermissions = async () => {
             route: "/audit-logs",
             method: "GET",
             description: "View audit logs"
+        },
+        {
+            action: "READ",
+            base_url: "/api",
+            route: "/audit-logs",
+            method: "GET",
+            description: "View audit logs"
         }
+
     ];
 
     for (const permission of permissions) {
