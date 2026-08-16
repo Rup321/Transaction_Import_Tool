@@ -18,7 +18,7 @@ const Permission = sequelize.define("Permission", {
         allowNull: false,
     },
     base_url: {
-        type: DataTypes.STRING(12),
+        type: DataTypes.STRING(100),
         allowNull: false
     },
     route: {
