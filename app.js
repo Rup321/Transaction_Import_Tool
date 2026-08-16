@@ -1,17 +1,22 @@
 const express = require("express");
 const morgan = require("morgan");
 const { dbConnection } = require("./config/db");
-const app = express();
-require("dotenv").config();
+const { errorHandler } = require("./src/middleware/errorHandler");
 
+require("dotenv").config();
+const app = express();
 
 
 app.use(express.json());
-app.use(morgan("dev"));
+app.use(morgan("combined"));
 
 let PORT = process.env.PORT || 3000
-dbConnection();
 
-app.listen(PORT, () => {
-    console.log(`Server is listening on port ${PORT}`);
-});
+app.use(errorHandler);
+const serverConnect = async () => {
+    await dbConnection();
+    app.listen(PORT, () => {
+        console.log(`Server is listening on port ${PORT}`);
+    });
+}
+serverConnect();
